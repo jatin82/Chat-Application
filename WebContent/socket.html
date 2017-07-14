@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' / -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="scripts/mainjs.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.css">
+</head>
+<meta charset="UTF-8">
+<title>Chat Application</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row bg-main" id="header">
+			<img id="mainLogo" src="images/chatRoom.png">
+			<div class="visible-xs infoButton bg-skin fg-main">
+				<span class="fa fa-group fa-2x"></span>
+			</div>
+			<div id="list">
+				<div id="particpants" class="row" style="display: none">
+					<div class="card pBody fg-white bg-black" chatid="room-0" ispart="no">
+						<div class="pImg"><span class="fa fa-user"></span></div>
+						<div class="pName">ROOM</div>
+					</div>
+					
+					<!--add new Group-->
+					<div class="add" >
+						<div class="addBody bg-main"><span class="fa fa-user-plus fa-2x fg-skin"></span></div>
+					</div>
+					
+				</div>
+			</div>		
+		</div>
+		<div class="row">
+			<div class="col-sm-10 bg-light2 text-center" id="load" style="display: none">
+				<div class="loader"></div>
+			</div>
+			<div class="col-sm-10 chatMain" style="display:block">
+				<!-- A room -->
+				<div id="room-0" style="display:none">
+					<div class="row bg-skin" id="hChatMain">
+						<h3 class="text-center fg-other">room</h3>
+					</div>
+					<div class="row" id="chatbook">
+						
+						
+					</div>
+				</div>				
+				<div class="row" id="inputChatMain">
+					<input  class="col-sm-10 col-xs-10" type="text" name="message" id="message" placeholder="Say hello to everyone ;D">
+					<button  class="col-sm-2 col-xs-2 btn btn-default bg-main fg-light2" type="submit" id="send">Send</button>
+				</div>
+			</div>
+			<div class="col-sm-2 bg-light hidden-xs">
+				<div class="row bg-skin" id="pHeader">
+					<h2 class="text-center fg-main">Particpants</h2>
+				</div>
+				<div id="particpants" class="row">
+					<div class="card pBody fg-white bg-black" chatid="room-0" ispart="no">
+						<div class="pImg"><span class="fa fa-user"></span></div>
+						<div class="pName">ROOM</div>
+					</div>
+					<!--add new Group-->
+					<div class="add" >
+						<div class="addBody bg-main"><span class="fa fa-user-plus fa-2x fg-skin"></span></div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="notifications">
+		
+	</div>
+	
+	<div id="addModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+		<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header bg-main fg-light">
+					<button type="button" class="close fg-white" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title text-center">Create Group</h4>
+				</div>
+				<div class="modal-body bg-skin">
+					
+				</div>
+				<div class="modal-footer bg-main fg-skin">
+					<input type="text" id="gname" placeholder="Enter Group name without Space and (:,>,-)" class="fg-black" style="width:60%">
+					<button class="btn btn-primary bg-skin fg-main" id="addGroup">Add</button>
+					<button class="btn btn-primary bg-skin fg-main" id="cancelGroup">cancel</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
